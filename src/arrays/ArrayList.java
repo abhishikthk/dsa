@@ -1,5 +1,8 @@
 package arrays;
 
+/*
+ * Manual Implementation of Array List
+ */
 public class ArrayList<T> {
 	private T[] arr;
 	private int index;
