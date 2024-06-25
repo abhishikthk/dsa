@@ -13,6 +13,7 @@ public class MaximumSubarray {
 		System.out.println("---> Kadane's Algo");
 		System.out.println(obj.maxSubArrayKadane(new int[] { 5, 4, -1, 7, 8 }));
 		System.out.println(obj.maxSubArrayKadane(new int[] { -2, -3, 4, -1, -2, 1, 5, -3 }));
+		System.out.println(obj.maxSubArrayKadane(new int[] { -2, -3, -1, -2, -3 }));
 	}
 
 	// Brute Force Approach
@@ -56,6 +57,9 @@ public class MaximumSubarray {
 				sum = 0;
 			}
 			maximum = Math.max(maximum, sum);
+		}
+		if (maximum < 0) {
+			return 0;
 		}
 		return maximum;
 	}
