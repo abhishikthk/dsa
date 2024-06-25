@@ -51,13 +51,27 @@ public class MaximumSubarray {
 	public int maxSubArrayKadane(int[] nums) {
 		int sum = 0;
 		int maximum = Integer.MIN_VALUE;
+		int tempStart = 0;
+		int indexStart = -1, indexEnd = -1;
+
 		for (int i = 0; i < nums.length; i++) {
+			
+			if (sum == 0) {
+				tempStart = i;
+			}
 			sum += nums[i];
+			if(sum>maximum) {
+				maximum = sum;
+				indexStart = tempStart;
+                indexEnd = i;
+			}
 			if (sum < 0) {
 				sum = 0;
 			}
-			maximum = Math.max(maximum, sum);
+
+
 		}
+		System.out.println("indexStatt = "+indexStart + " indexEnd = "+indexEnd);
 		if (maximum < 0) {
 			return 0;
 		}
